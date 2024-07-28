@@ -1,0 +1,121 @@
+<div class="grid">
+    <div class="md:col-8 md:col-offset-2 bg-white">
+        <div class="grid justify-content-center">
+            <div class="col-12 md:col-6 mt-2" id="img-title-container">
+                <img id="my-banner-img" src="../../../assets/Logo encuesta2.png" alt="foto-sede-callao.png">
+                <p class="text-center poppins-bold">ENCUESTA DE SATISFACCIÓN DEL <br/> CLIENTE - SERVICIO</p>
+            </div>
+        </div>
+        <form class="my-3 mx-3 md:mx-1" [formGroup]="servicioForm" (ngSubmit)="servicioFormSubmit()">
+
+            <div class="margin-4">
+                <label>1. La calidad en asistencia técnica previa al servicio.</label>
+                <div class="flex mt-3">
+                    @for (item of fiveChecks; track item) {
+                    <label class="square-radio-five md:ml-5 ml-3">
+                        <input type="radio" [value]="item" formControlName="primera">
+                        <span class="radio-label">{{ item }}</span>
+                    </label>
+                    }
+                </div>
+                <div class="flex mt-2">
+                  <span class="malo">Muy <br/>deficiente</span>
+                  <span class="deficiente">Deficiente</span>
+                  <span class="regular">Regular</span>
+                  <span class="bueno">Bueno</span>
+                  <span class="excelente">Muy bueno</span>
+                </div>
+            </div>
+
+            <div class="margin-4">
+                <label>2. La calidad del servicio ejecutado.</label>
+                <div class="flex mt-3">
+                    @for (item of fiveChecks; track item) {
+                    <label class="square-radio-five md:ml-5 ml-3">
+                        <input type="radio" [value]="item" formControlName="segunda">
+                        <span class="radio-label">{{ item }}</span>
+                    </label>
+                    }
+                </div>
+                <div class="flex mt-2">
+                  <span class="malo">Muy <br/>deficiente</span>
+                  <span class="deficiente">Deficiente</span>
+                  <span class="regular">Regular</span>
+                  <span class="bueno">Bueno</span>
+                  <span class="excelente">Muy bueno</span>
+                </div>
+            </div>
+
+            <div class="margin-4">
+                <label>3. El cumplimiento del tiempo de entrega.</label>
+                <div class="flex mt-3">
+                    @for (item of fiveChecks; track item) {
+                    <label class="square-radio-five md:ml-5 ml-3">
+                        <input type="radio" [value]="item" formControlName="tercera">
+                        <span class="radio-label">{{ item }}</span>
+                    </label>
+                    }
+                </div>
+                <div class="flex mt-2">
+                  <span class="malo">Muy <br/>deficiente</span>
+                  <span class="deficiente">Deficiente</span>
+                  <span class="regular">Regular</span>
+                  <span class="bueno">Bueno</span>
+                  <span class="excelente">Muy bueno</span>
+                </div>
+            </div>
+
+            <div class="margin-4">
+                <label>4. La seguridad durante la ejecución del servicio.</label>
+                <div class="flex mt-3">
+                    @for (item of fiveChecks; track item) {
+                    <label class="square-radio-five md:ml-5 ml-3">
+                        <input type="radio" [value]="item" formControlName="cuarta">
+                        <span class="radio-label">{{ item }}</span>
+                    </label>
+                    }
+                </div>
+                <div class="flex mt-2">
+                  <span class="malo">Muy <br/>deficiente</span>
+                  <span class="deficiente">Deficiente</span>
+                  <span class="regular">Regular</span>
+                  <span class="bueno">Bueno</span>
+                  <span class="excelente">Muy bueno</span>
+                </div>
+            </div>
+
+            <div class="margin-4">
+                <label>5. ¿Qué probabilidad hay de que nos recomiende para otro servicio?</label>
+                <div class="flex mt-3">
+                    @for (item of tenChecks; track item) {
+                    <label class="square-radio-ten md:ml-4 ml-3">
+                        <input type="radio" [value]="item" formControlName="quinta">
+                        <span class="radio-label">{{ item }}</span>
+                    </label>
+                    }
+                </div>
+                <div class="flex mt-2 ml-4">
+                  <span class="start-span">Poco <br/> probable</span>
+                  <span class="end-span">Muy <br/> probable</span>
+                </div>
+            </div>
+
+            <div class="margin-4">
+                <div class="flex flex-column">
+                    <label>6. Observaciones y/o comentarios.</label>
+                    <textarea class="mt-3 mx-4" rows="5" cols="30" pInputTextarea formControlName="sexta"></textarea>
+                </div>
+            </div>
+
+            <div class="flex justify-content-end my-3">
+                <p-button type="submit" severity="success" icon="pi pi-send" size="small" label="Enviar" />
+            </div>
+
+        </form>
+
+        @if(formLoading) {
+        <p-progressBar mode="indeterminate" [style]="{ height: '6px' }" />
+        }
+    </div>
+</div>
+<p-toast />

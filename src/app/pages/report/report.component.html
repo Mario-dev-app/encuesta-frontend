@@ -1,0 +1,76 @@
+<p-menubar>
+  <ng-template pTemplate="start">
+    <img src="../../../assets/Logo MP 2.png" height="40" class="mr-2" />
+  </ng-template>
+</p-menubar>
+<div class="grid mx-3">
+  <div class="col-12 md:col-12 mt-3">
+    <p-card [header]="'Reporte de respuestas'">
+      <div class="grid pb-5">
+        <div class="md:col-3 col-12">
+          <label for="desde" class="font-bold block mb-2"> Desde: </label>
+          <p-calendar placeholder="MM/dd/YYYY" [(ngModel)]="desde" [iconDisplay]="'input'" [showIcon]="true"
+            inputId="desde" />
+        </div>
+        <div class="md:col-3 col-12">
+          <label for="hasta" class="font-bold block mb-2"> Hasta: </label>
+          <p-calendar placeholder="MM/dd/YYYY" [(ngModel)]="hasta" [iconDisplay]="'input'" [showIcon]="true"
+            inputId="hasta" />
+        </div>
+        <div class="md:col-5 pt-5 col-12">
+          <p-button label="Buscar" icon="pi pi-search" (click)="buscarRespuestas()" />
+          <p-button class="ml-3" severity="secondary" label="Limpiar" icon="pi pi-eraser"
+            (click)="limpiarRespuestas()" />
+          <p-button [disabled]="excelButtonDisabled" class="ml-3" severity="success" label="Descargar"
+            icon="pi pi-file-excel" (click)="descargarExcelRespuestas()" />
+        </div>
+      </div>
+      @if(isLoading) {
+      <p-progressBar mode="indeterminate" [style]="{ height: '6px' }" />
+      }
+      <p-table [styleClass]="'p-datatable-sm'" [value]="encuestas" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Código Cliente</th>
+            <th>Nombre Cliente</th>
+            <th>Tipo</th>
+            <th>OV</th>
+            <th>OC</th>
+            <th>Factura</th>
+            <th>Vendedor</th>
+            <th>Fecha Contabilización</th>
+            <th>Sucursal</th>
+            <th>Linea Negocio</th>
+            <th>Pregunta 1</th>
+            <th>Pregunta 2</th>
+            <th>Pregunta 3</th>
+            <th>Pregunta 4</th>
+            <th>Pregunta 5</th>
+            <th>Pregunta 6</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-encuesta>
+          <tr>
+            <td>{{ encuesta.codigo_cliente }}</td>
+            <td>{{ encuesta.nombre_cliente }}</td>
+            <td>{{ encuesta.tipo }}</td>
+            <td>{{ encuesta.num_ov }}</td>
+            <td>{{ encuesta.num_oc }}</td>
+            <td>{{ encuesta.num_factura }}</td>
+            <td>{{ encuesta.vendedor }}</td>
+            <td>{{ encuesta.fecha_contabilizacion.split('T')[0] }}</td>
+            <td>{{ encuesta.sucursal }}</td>
+            <td>{{ encuesta.linea_negocio }}</td>
+            <td>{{ encuesta.preguntas.pregunta_1 }}</td>
+            <td>{{ encuesta.preguntas.pregunta_2 }}</td>
+            <td>{{ encuesta.preguntas.pregunta_3 }}</td>
+            <td>{{ encuesta.preguntas.pregunta_4 }}</td>
+            <td>{{ encuesta.preguntas.pregunta_5 ? encuesta.preguntas.pregunta_5 : 'NO APLICA' }}</td>
+            <td>{{ encuesta.preguntas.pregunta_6 ? encuesta.preguntas.pregunta_6 : 'NO APLICA' }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-card>
+  </div>
+</div>
+<p-toast />

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: linear-gradient(to bottom, rgba(0, 15, 30, 1), rgba(0, 191, 219, 1));
+    /* background-image: url('./assets/foto-sede-callao.png'); */
+}
+
+#img-title-container {
+    border: 2px solid #dcdcdc;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        background-color: white;
+        background-image: none;
+    }
+
+    #img-title-container {
+        border: none;
+    }
+}
+

@@ -1,0 +1,243 @@
+#my-banner-img {
+    width: 100%;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #7f7f7f;
+}
+
+/* Estilo general para los radio buttons */
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor del radio button */
+.square-radio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Estilo del span que actúa como el radio button */
+.square-radio-five .radio-label {
+    display: inline-block;
+    width: 5.5rem; /* Tamaño del cuadrado */
+    height: 3rem; /* Tamaño del cuadrado */
+    line-height: 3rem; /* Centra verticalmente el número */
+    text-align: center; /* Centra horizontalmente el número */
+    border: 1px solid #BEBEBE;
+    border-radius: 5px; /* Ajusta el radio para redondear las esquinas */
+    font-size: 1rem; /* Tamaño del texto */
+    background-color: white;
+    color: #000;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    cursor: pointer;
+}
+
+.square-radio-five :hover {
+    border: 1px solid grey;
+}
+
+
+.square-radio-ten .radio-label {
+    display: inline-block;
+    width: 4vw; /* Tamaño del cuadrado */
+    height: 3rem; /* Tamaño del cuadrado */
+    line-height: 3rem; /* Centra verticalmente el número */
+    text-align: center; /* Centra horizontalmente el número */
+    border: 1px solid #BEBEBE;
+    border-radius: 5px; /* Ajusta el radio para redondear las esquinas */
+    font-size: 1rem; /* Tamaño del texto */
+    background-color: white;
+    color: #000;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    cursor: pointer;
+}
+
+.start-span {
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.end-span {
+  margin-left: 71%;
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.malo {
+  margin-left: 3.8%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.deficiente {
+  margin-left: 4.8%;
+  font-size: 0.8rem;
+}
+
+.regular {
+  margin-left: 5%;
+  font-size: 0.8rem;
+}
+
+.bueno {
+  margin-left: 6%;
+  font-size: 0.8rem;
+}
+
+.excelente {
+ margin-left: 6%;
+ font-size: 0.8rem;
+}
+
+@media screen and (max-width: 1500px) {
+  .end-span {
+    margin-left: 75.5%;
+    text-align: left;
+  }
+
+  .malo {
+    margin-left: 4.8%;
+  }
+
+  .deficiente {
+    margin-left: 6.5%;
+  }
+
+  .regular {
+    margin-left: 6.8%;
+  }
+
+  .bueno {
+    margin-left: 8%;
+  }
+
+  .excelente {
+   margin-left: 7.8%;
+  }
+}
+
+@media screen and (max-width: 1380px) {
+
+  .end-span {
+    margin-left: 79%;
+    text-align: left;
+  }
+
+  .malo {
+    margin-left: 5.5%;
+  }
+
+  .deficiente {
+    margin-left: 7.5%;
+  }
+
+  .regular {
+    margin-left: 8%;
+  }
+
+  .bueno {
+    margin-left: 9%;
+  }
+
+  .excelente {
+   margin-left: 8.5%;
+  }
+}
+
+
+@media screen and (max-width: 1080px) {
+  .end-span {
+    margin-left: 81%;
+    text-align: right;
+  }
+
+  .malo {
+    margin-left: 6.8%;
+  }
+
+  .deficiente {
+    margin-left: 8.5%;
+  }
+
+  .regular {
+    margin-left: 10%;
+  }
+
+  .bueno {
+    margin-left: 11%;
+  }
+
+  .excelente {
+   margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+    .square-radio-ten .radio-label {
+        width: 10vw;
+    }
+
+    .start-span {
+      font-size: 0.8rem;
+      text-align: left;
+    }
+
+    .end-span {
+      margin-left: 78%;
+      text-align: right;
+      font-size: 0.8rem;
+    }
+
+    .malo {
+      margin-left: 6.5%;
+      font-size: 0.8rem;
+    }
+
+    .deficiente {
+      margin-left: 8%;
+      font-size: 0.8rem;
+    }
+
+    .regular {
+      margin-left: 10%;
+      font-size: 0.8rem;
+    }
+
+    .bueno {
+      margin-left: 11%;
+      font-size: 0.8rem;
+    }
+
+    .excelente {
+     margin-left: 11%;
+     font-size: 0.8rem;
+    }
+}
+
+.square-radio-ten :hover {
+    border: 1px solid grey;
+}
+
+/* Estilo del span cuando el radio button está seleccionado */
+input[type="radio"]:checked + .radio-label {
+    background-color: #000;
+    color: #fff;
+}
+
+.margin-4 {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
